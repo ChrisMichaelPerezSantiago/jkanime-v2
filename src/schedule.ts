@@ -31,7 +31,7 @@ async function schedule(): ReturnType {
   const daysOfWeek = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
 
   const scheduleData: AnimeDay[] = await Promise.all(
-    daysOfWeek.map(async (day) => {
+    _.map(daysOfWeek, async (day) => {
       const response = await makeRequest(requestOpts.path, requestOpts.responseType as never, { method: 'get' })
       if (!response)
         return { day, animes: [] }
