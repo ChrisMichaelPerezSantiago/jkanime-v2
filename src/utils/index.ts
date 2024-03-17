@@ -1,4 +1,6 @@
+import _ from 'lodash'
 import qs from 'qs'
+import type { NumberOrNull } from '../const/types'
 
 export class ToolKit {
   static buildQuery = (obj: Record<string, any>) => {
@@ -14,5 +16,10 @@ export class ToolKit {
     }
 
     return qs.stringify(query, { encode: false })
+  }
+
+  static extractNumberFromString = (inputString: any): NumberOrNull => {
+    const match = _.parseInt(_.find(inputString.match(/\d+/), _.identity))
+    return _.isFinite(match) ? match : null
   }
 }

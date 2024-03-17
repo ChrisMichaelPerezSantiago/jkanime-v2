@@ -11,7 +11,39 @@ yarn add jkanime-v2
 
 # 📚 Documentation
 
-## `function search(q: string): SearchReturnType`
+## `async function top(season: SeasonType, year: YearType): Promise<Anime[] | null>`
+*Important: If the ***Temporada Actual*** option is selected the year option will be omitted in the request.*
+
+| SeasonType |      | YearType |      |
+|------------|------|----------|------|
+| Option     |      | Option   |      |
+|------------|------|----------|------|
+| `'Primavera'` |      | `'2020'` |      |
+| `'Verano'`    |      | `'2021'` |      |
+| `'Otoño'`     |      | `'2022'` |      |
+| `'Invierno'`  |      | `'2023'` |      |
+| `'Temporada Actual'` |  | `'2024'` |  |
+
+```ts
+const season = 'Invierno'
+const year = '2020'
+const response = await top(season, year)
+```
+```json
+[
+  {
+    "id": null,
+    "slug": "shingeki-no-kyojin-the-final-season",
+    "title": "Shingeki no Kyojin: The Final Season",
+    "synopsis": "Con Eren y compañía ahora en la costa y la amenaza de Marley acechando, ¿que sigue para los Scouts y su búsqueda para desentrañar los misterios de los Titanes, la humanidad y mas?",
+    "episodes": 16,
+    "image": "https://cdn.jkdesu.com/assets/images/animes/image/shingeki-no-kyojin-the-final-season.jpg",
+    "type": "Serie"
+  } // ...
+]
+```
+
+## `async function search(q: string): Promise<SearchResults | null>`
 ```ts
 const q = 'tokyo ghoul'
 const response = await search(q)
@@ -67,7 +99,7 @@ const response = await search(q)
 }
 ```
 
-## `function getAnimeServers(animeId: string, chapter: number): Promise<string[] | null>:`
+## `async function getAnimeServers(animeId: string, chapter: number): Promise<string[] | null>:`
 *Important: Keep in mind that it takes about 2 to 3 seconds to return the URLs. The implementation should be improved.*
 
 ```ts
