@@ -103,9 +103,9 @@ const response = await search(q)
 *Important: Keep in mind that it takes about 2 to 3 seconds to return the URLs. The implementation should be improved.*
 
 ```ts
-const animeId = 'tokyo-ghoulre'
+const animeSlug = 'tokyo-ghoulre'
 const animeChapter = 1
-const response = await getAnimeServers(animeId, animeChapter)
+const response = await getAnimeServers(animeSlug, animeChapter)
 ```
 ```text
 [
