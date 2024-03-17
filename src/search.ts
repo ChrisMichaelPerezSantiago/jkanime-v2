@@ -1,6 +1,7 @@
 import _ from 'lodash'
 import { makeRequest } from './MakeRequest'
 import { config } from './config'
+import { ToolKit } from './utils'
 
 interface Anime {
   id: string
@@ -30,7 +31,7 @@ type SearchReturnType = Promise<SearchResults | null>
 
 export async function search(q: string): SearchReturnType {
   const requestOpts: Record<string, any> = {
-    path: `${config.baseURL}ajax/ajax_search/?q=${q}`,
+    path: `${config.baseURL}ajax/ajax_search/?${ToolKit.buildQuery({ q })}`,
     responseType: 'json',
   }
 

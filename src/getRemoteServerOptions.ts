@@ -1,5 +1,6 @@
 import _ from 'lodash'
 import { makeRequest } from './MakeRequest'
+import { ToolKit } from './utils'
 
 interface ServerOptions {
   remote: string
@@ -11,7 +12,8 @@ interface ServerOptions {
 function transformURL(serverOption: ServerOptions) {
   const remote = serverOption.remote
   const server = _.toLower(serverOption.server)
-  const url = `https://jkanime.net/c4.php?u=${remote}&s=${server}`
+  const url = `https://jkanime.net/c4.php?${ToolKit.buildQuery({ u: remote, s: server })
+}`
   return url
 }
 
