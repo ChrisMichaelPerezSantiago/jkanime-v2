@@ -11,6 +11,62 @@ yarn add jkanime-v2
 
 # 📚 Documentation
 
+## `function search(q: string): SearchReturnType`
+```ts
+const q = 'tokyo ghoul'
+const response = await search(q)
+```
+
+```json
+{
+  "animes": [
+    {
+      "id": "1183",
+      "slug": "tokyo-ghoul",
+      "title": "Tokyo Ghoul",
+      "altertitles": [
+        {
+          "language": "Ingles",
+          "title": " Tokyo Ghoul"
+        },
+        {
+          "language": "Sinonimos",
+          "title": " Tokyo Kushu, Toukyou Kushu, Toukyou Ghoul"
+        },
+        {
+          "language": "Japones",
+          "title": " 東京喰種-トーキョーグール-"
+        }
+      ],
+      "synopsis": "En Tokyo ocurren asesinatos misteriosos cometidos por Ghouls, seres desconocidos que comen carne humana, un día Kaneki Ken un joven de 18 años que cursa la Universidad conoce a una chica en un restaurante y la invita a salir, pero luego se da cuenta que ella es un Ghoul y sufre un ataque de parte de ella, pero afortunadamente sobrevive y la muchacha muere; debido a sus heridas los médicos le hacen un transplante de riñon sin saber que la muchacha era una Ghoul y Kaneki termina convirtiéndose en un ser híbrido humano-ghoul y de ahora en adelante deberá vivir escondiéndose de los humanos.",
+      "status": "finished",
+      "episodes": "12",
+      "image": "https://cdn.jkdesu.com/assets/images/animes/image/tokyo-ghoul.jpg",
+      "thumbnail": "https://cdn.jkdesu.com/assets/images/animes/thumbnail/tokyo-ghoul.jpg",
+      "type": "TV",
+      "rel_id": {
+        "Sequel": [
+          "1413"
+        ],
+        "Side story": [
+          "1686",
+          "1720"
+        ]
+      },
+      "coincidencias": "2"
+    } // ...
+  ],
+  "anime_types": {
+    "TV": "Serie",
+    "OVA": "OVA",
+    "Movie": "Pelicula",
+    "Special": "Especial",
+    "ONA": "ONA",
+    "Music": "Musical"
+  }
+}
+```
+
 ## `function getAnimeServers(animeId: string, chapter: number): Promise<string[] | null>:`
 *Important: Keep in mind that it takes about 2 to 3 seconds to return the URLs. The implementation should be improved.*
 
