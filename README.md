@@ -195,4 +195,4 @@ _*Chris M. Perez*_
 
 ---
 
-Copyright ©2022 [jkanime-v2](https://github.com/ChrisMichaelPerezSantiago/jkanime-v2).
+Copyright ©2024 [jkanime-v2](https://github.com/ChrisMichaelPerezSantiago/jkanime-v2).
