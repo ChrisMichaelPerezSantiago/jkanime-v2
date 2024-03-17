@@ -86,6 +86,76 @@ const response = await getAnimeServers(animeId, animeChapter)
 ]
 ```
 
+## `async function schedule(): Promise<AnimeDay[]>:`
+
+```ts
+const response = await schedule()
+```
+
+```json
+[
+  {
+    "day": "monday",
+    "animes": [
+      {
+        "id": "3615",
+        "slug": "high-card-season-2",
+        "title": "High Card Season 2",
+        "image": "https://cdn.jkdesu.com/assets/images/animes/image/high-card-season-2.jpg",
+        "lastEpisode": "10",
+        "timestamp": "2024-03-11 10:35:34",
+        "type": "Serie"
+      },
+      {
+        "id": "3596",
+        "slug": "tsuki-ga-michibiku-isekai-douchuu-2nd-season",
+        "title": "Tsuki ga Michibiku Isekai Douchuu 2nd Season",
+        "image": "https://cdn.jkdesu.com/assets/images/animes/image/tsuki-ga-michibiku-isekai-douchuu-2nd-season.jpg",
+        "lastEpisode": "10",
+        "timestamp": "2024-03-11 11:42:26",
+        "type": "Serie"
+      },
+      {
+        "id": "3638",
+        "slug": "synduality-noir-part-2",
+        "title": "Synduality: Noir Part 2",
+        "image": "https://cdn.jkdesu.com/assets/images/animes/image/synduality-noir-part-2.jpg",
+        "lastEpisode": "10",
+        "timestamp": "2024-03-11 14:45:09",
+        "type": "Serie"
+      },
+      {
+        "id": "3625",
+        "slug": "himesama-goumon-no-jikan-desu",
+        "title": "Himesama \"Goumon\" no Jikan desu",
+        "image": "https://cdn.jkdesu.com/assets/images/animes/image/himesama-goumon-no-jikan-desu.jpg",
+        "lastEpisode": "10",
+        "timestamp": "2024-03-11 14:45:11",
+        "type": "Serie"
+      },
+      {
+        "id": "3604",
+        "slug": "dosanko-gal-wa-namara-menkoi",
+        "title": "Dosanko Gal wa Namara Menkoi",
+        "image": "https://cdn.jkdesu.com/assets/images/animes/image/dosanko-gal-wa-namara-menkoi.jpg",
+        "lastEpisode": "10",
+        "timestamp": "2024-03-11 14:45:13",
+        "type": "Serie"
+      },
+      {
+        "id": "3611",
+        "slug": "oroka-na-tenshi-wa-akuma-to-odoru",
+        "title": "Oroka na Tenshi wa Akuma to Odoru",
+        "image": "https://cdn.jkdesu.com/assets/images/animes/image/oroka-na-tenshi-wa-akuma-to-odoru.jpg",
+        "lastEpisode": "10",
+        "timestamp": "2024-03-11 14:45:14",
+        "type": "Serie"
+      }
+    ]
+  } // ...
+]
+```
+
 ## **:handshake: Contributing**
 
 - Fork it!
