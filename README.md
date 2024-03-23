@@ -3,7 +3,7 @@
 
 - Currently in development...
 
-## 📦 Installation
+## 📦 Installation (not yet available ...)
 ```shell
 npm install jkanime-v2
 yarn add jkanime-v2
