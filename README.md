@@ -11,6 +11,90 @@ yarn add jkanime-v2
 
 # 📚 Documentation
 
+## `function getExtraInfo(animeSlug: string): Promise<RootAnime | null>`
+```ts
+const animeSlug = 'tokyo-ghoul'
+const response = await getExtraInfo(animeSlug)
+```
+```json
+{
+  "extra": {
+    "type": "Serie",
+    "genre": [
+      "Psicologico",
+      "Sobrenatural",
+      "Terror",
+      "Drama",
+      "Misterio",
+      "Accion"
+    ],
+    "studios": [
+      "Studio Pierrot"
+    ],
+    "demography": [
+      "Seinen"
+    ],
+    "languages": "Japonés",
+    "episodeList": [
+      {
+        "key": "tokyo-ghoul",
+        "value": 1
+      },
+      {
+        "key": "tokyo-ghoul",
+        "value": 2
+      },
+      {
+        "key": "tokyo-ghoul",
+        "value": 3
+      },
+      {
+        "key": "tokyo-ghoul",
+        "value": 4
+      },
+      {
+        "key": "tokyo-ghoul",
+        "value": 5
+      },
+      {
+        "key": "tokyo-ghoul",
+        "value": 6
+      },
+      {
+        "key": "tokyo-ghoul",
+        "value": 7
+      },
+      {
+        "key": "tokyo-ghoul",
+        "value": 8
+      },
+      {
+        "key": "tokyo-ghoul",
+        "value": 9
+      },
+      {
+        "key": "tokyo-ghoul",
+        "value": 10
+      },
+      {
+        "key": "tokyo-ghoul",
+        "value": 11
+      },
+      {
+        "key": "tokyo-ghoul",
+        "value": 12
+      }
+    ],
+    "episodes": 12,
+    "duration": "24 min. por episodio",
+    "aired": "Jul 3 de 2014 a Ago 18 de 2014",
+    "status": "Concluido",
+    "quality": "720p",
+    "promo": "https://youtube.com/watch?v=vGuQeQsoRgU"
+  }
+}
+```
+
 ## `async function top(season: SeasonType, year: YearType): Promise<Anime[] | null>`
 *Important: If the ***Temporada Actual*** option is selected the year option will be omitted in the request.*
 
