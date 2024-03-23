@@ -11,6 +11,30 @@ yarn add jkanime-v2
 
 # 📚 Documentation
 
+## `function byAlphabet(letter: string): Promise<AnimeInfo[] | null>`
+```ts
+const letter = 'A'
+const response = await byAlphabet(letter)
+```
+```json
+[
+  {
+    "slug": "ta-bu-dang-nuzhu-hen-duo-nian",
+    "title": "Ta Bu Dang Nuzhu Hen Duo Nian",
+    "thumbnail": "https://cdn.jkdesu.com/assets/images/animes/image/ta-bu-dang-nuzhu-hen-duo-nian.jpg",
+    "type": "ONA",
+    "status": "Concluido"
+  },
+  {
+    "slug": "tabi-machi-late-show",
+    "title": "Tabi Machi Late Show",
+    "thumbnail": "https://cdn.jkdesu.com/assets/images/animes/image/tabi-machi-late-show.jpg",
+    "type": "Anime",
+    "status": "Concluido"
+  } // ...
+]
+```
+
 ## `function getExtraInfo(animeSlug: string): Promise<RootAnime | null>`
 ```ts
 const animeSlug = 'tokyo-ghoul'
