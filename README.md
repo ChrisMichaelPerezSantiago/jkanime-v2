@@ -11,6 +11,57 @@ yarn add jkanime-v2
 
 # 📚 Documentation
 
+## `function filter({ query }: FilterProps): Promise<AnimeInfo[] | null>`
+The filter API allows users to filter anime information based on various criteria such as  genre, demography, category, type, state, year, season and orderBy.
+
+## Filter Parameters
+### Genre
+`['accion', 'aventura', 'autos', ..., 'isekai']`
+## Demography
+`['nios', 'shoujo', 'shounen', 'seinen', 'josei']`
+## Category
+`['donghua']`
+## Type
+`['animes', 'peliculas', 'especiales', 'ovas', 'onas']`
+## State
+`['emision', 'finalizados', 'estrenos']`
+## Year
+`['2024', '2023', '2022', ..., '1981']`
+## Season
+`['invierno', 'primavera', 'verano', 'otoño']`
+## OrderBy
+`['desc']`
+
+```ts
+const response = await filter({
+  query: {
+    genre: 'sci-fi',
+    year: '2024',
+  },
+})
+```
+```json
+[
+  {
+    "title": "Kaijuu 8-gou",
+    "slug": "kaijuu-8-gou",
+    "image": "https://cdn.jkdesu.com/assets/images/animes/image/kaijuu-8-gou.jpg",
+    "synopsis": "Unos monstruos grotescos parecidos a Godzilla llamados \"kaijuu\" llevan muchos años apareciendo por Japón. Para combatir a estas bestias, una unidad militar de élite conocida como Cuerpo de Defensa arriesga su vida a diario para proteger a los civiles. Una vez que se mata a una criatura, los \"barrenderos\" -que trabajan bajo las órdenes de la Corporación Profesional de Limpieza de Kaijuu- se encargan de deshacerse de sus restos.\n\nKafka Hibino, un hombre de 32 años, no está satisfecho con su trabajo de barrendero. Desde muy joven ha aspirado a unirse al Cuerpo de Defensa y ganarse la vida matando kaijuus. Sin embargo, tras varios intentos fallidos, renunció a sus sueños y se resignó a la mediocridad que le proporcionaba un sueldo decente. Sin embargo, cuando un ambicioso recluta de 18 años llamado Leno Ichikawa se une a su equipo de limpieza, Kafka vuelve a recordar su deseo de alistarse en el ejército.\n\nTras una cadena de desafortunados acontecimientos y una interacción con el barrendero junior, Kafka se encuentra con un kaijuu de tipo parásito que se abre paso a través de su boca, convirtiéndolo en un monstruo humanoide. Con sus nuevos poderes, Kafka se propone dar una última oportunidad al sueño de su vida.",
+    "type": "Anime",
+    "episodes": "? Ep"
+  },
+  {
+    "title": "Kuramerukagari",
+    "slug": "kuramerukagari",
+    "image": "https://cdn.jkdesu.com/assets/images/animes/image/kuramerukagari.jpg",
+    "synopsis": "Esta es una historia que une a personas y un pueblo. Una ciudad minera de carbón repleta de excavadoras de pequeña escala, comúnmente conocidas como \"Hakoniwa\". En este pueblo que cambia a diario como un laberinto, hay una chica llamada Kagari que dirige un negocio de elaboración de mapas y un chico llamado Yuya que sueña con liberarse de los \"Hakoniwa\". Finalmente, los dos, junto con los singulares residentes del pueblo, se enfrentan a una conspiración que sacude a todo el pueblo. El destino del “Hakoniwa” depende de los dibujos de Kagari en el mapa.",
+    "type": "Pelicula",
+    "episodes": "1 Ep"
+  }
+  // ...
+]
+```
+
 ## `function byAlphabet(letter: string): Promise<AnimeInfo[] | null>`
 ```ts
 const letter = 'A'
