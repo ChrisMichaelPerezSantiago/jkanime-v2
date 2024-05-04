@@ -1,5 +1,4 @@
 import _ from 'lodash'
-import { makeRequest } from './MakeRequest'
 import { ToolKit } from './utils'
 
 interface ServerOptions {
@@ -9,29 +8,14 @@ interface ServerOptions {
   lang: number
 }
 
-function transformURL(serverOption: ServerOptions) {
-  const remote = serverOption.remote
-  const server = _.toLower(serverOption.server)
-  const url = `https://jkanime.net/c4.php?${ToolKit.buildQuery({ u: remote, s: server })
-}`
-  return url
+function transformURL(servers: ServerOptions[]) {
+  const options = _.map(servers, serverOption =>
+     `https://jkanime.net/c1.php?${ToolKit.buildQuery({ u: serverOption.remote, s: _.toLower(serverOption.server) })}`)
+  return options
 }
 
-async function getRemoteServerOptions(url: string) {
-  const requestOpts: Record<string, any> = {
-    path: url,
-    responseType: 'text',
-  }
-  const response = await makeRequest(requestOpts.path, requestOpts.responseType, { method: 'get' })
-
-  if (!response)
-    return null
-
-  const jsonString = _.replace(response, 'var servers =', '')
-  const servers = JSON.parse(jsonString)
-  const URLs = _.map(servers, transformURL)
-
-  return URLs
+async function getRemoteServerOptions(servers: ServerOptions[]) {
+  return transformURL(servers)
 }
 
 export default getRemoteServerOptions

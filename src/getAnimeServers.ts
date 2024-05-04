@@ -20,10 +20,10 @@ export async function getAnimeServers(animeId: string, chapter: number): Promise
   const $ = cheerio.load(responsePromise)
 
   // Find the script tag containing the dynamic remote server.js URL
-  const scriptSrc = $('script').filter((_, elem) => $(elem).text().includes('script.src = remote')).text().trim()
+  const scriptSrc = $('script').filter((_, elem) => $(elem).text().includes('var servers')).text().trim()
 
   // Check if there's a match before extracting the dynamic remote server.js URL
-  const dynamicSrcMatch = scriptSrc.match(/script.src = remote\s*\+\s*'(.+?)'/)
+  const dynamicSrcMatch = scriptSrc.match(/var servers = (\[.*?\]);/s)
   if (!dynamicSrcMatch)
     return null // No dynamic server URL found
 
@@ -32,8 +32,10 @@ export async function getAnimeServers(animeId: string, chapter: number): Promise
   if (!dynamicSrc)
     return null
 
+  const servers = JSON.parse(dynamicSrc)
+
   // Fetch the remote server options asynchronously
-  const remoteServerOptionsPromise = getRemoteServerOptions(`${config.remoteServerURL}${dynamicSrc}`)
+  const remoteServerOptionsPromise = getRemoteServerOptions(servers)
 
   // Wait for both requests to complete
   const [, remoteServerJsURL] = await Promise.all([responsePromise, remoteServerOptionsPromise])
