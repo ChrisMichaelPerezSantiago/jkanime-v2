@@ -11,6 +11,35 @@ yarn add jkanime-v2
 
 # 📚 Documentation
 
+## `function latestAnimeAdded(): Promise<Anime[] | null>`
+The latestAnimeAdded API allows users to get the latest anime added to the catalog.
+```ts
+const response = await latestAnimeAdded()
+```
+```json
+[
+  {
+    "slug": "watashi-no-shiawase-na-kekkon-watashi-no-shiawase-na-katachi",
+    "title": "Watashi no Shiawase na Kekkon: Watashi no Shiawase na Katachi",
+    "synopsis": null,
+    "episodes": null,
+    "image": "https://cdn.jkdesu.com/assets/images/animes/image/watashi-no-shiawase-na-kekkon-watashi-no-shiawase-na-katachi.jpg",
+    "type": "OVA",
+    "status": "Concluido"
+  },
+  {
+    "slug": "shen-zhiyi-jiao",
+    "title": "Shen Zhiyi Jiao",
+    "synopsis": null,
+    "episodes": null,
+    "image": "https://cdn.jkdesu.com/assets/images/animes/image/shen-zhiyi-jiao.jpg",
+    "type": "ONA",
+    "status": "En emision"
+  }
+  // ...
+]
+```
+
 ## `function filter({ query }: FilterProps): Promise<AnimeInfo[] | null>`
 The filter API allows users to filter anime information based on various criteria such as  genre, demography, category, type, state, year, season and orderBy.
 
