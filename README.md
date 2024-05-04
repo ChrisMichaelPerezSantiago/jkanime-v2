@@ -1,9 +1,7 @@
 # ✓ JkAnime V2
 >  Discover the updated jkanime v2 scrapper: effortlessly extract data and stream the latest anime episodes with no restrictions. Access the entire catalog for free! 🚀
 
-- Currently in development...
-
-## 📦 Installation (not yet available ...)
+## 📦 Installation
 ```shell
 npm install jkanime-v2
 yarn add jkanime-v2
