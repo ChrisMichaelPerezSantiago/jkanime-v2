@@ -52,4 +52,16 @@ describe('scraper', () => {
     expect(result).toBeDefined()
     expect(size(result)).toBeGreaterThan(0)
   })
+  it('should return the anime directory', async () => {
+    const result = await api.getAnimeDirectory(2)
+    expect(result).toBeDefined()
+    expect(size(result)).toBeGreaterThan(0)
+
+    if (result && Array.isArray(result)) {
+      result.forEach((anime) => {
+        expect(anime).toHaveProperty('title')
+        expect(anime).toHaveProperty('slug')
+      })
+    }
+  })
 })

@@ -6,6 +6,7 @@ import latestAnimeAdded from './latestAnimeAdded'
 import schedule from './schedule'
 import { search } from './search'
 import top from './top'
+import getAnimeDirectory from './getAnimeDirectory'
 
 export default {
   byAlphabet,
@@ -16,4 +17,5 @@ export default {
   schedule,
   search,
   top,
+  getAnimeDirectory,
 }
